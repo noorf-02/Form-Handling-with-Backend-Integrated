@@ -9,7 +9,8 @@ app.use(cors());
 const port = process.env.PORT;
 const connectDB = require("./DB CONNECTION/connectDB");
 connectDB();
-
+const router = require('./VIEW/user');
+app.use('/', router);
 
 app.get('/', (req,res)=>{
     res.send("This is the homepage");
