@@ -7,6 +7,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 const port = process.env.PORT;
+const connectDB = require("./DB CONNECTION/connectDB");
+connectDB();
+
 
 app.get('/', (req,res)=>{
     res.send("This is the homepage");
