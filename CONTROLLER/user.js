@@ -20,6 +20,11 @@ const getUser = async (req, res)=>{
 const deleteUser = async (req,res)=>{
     const deletedUser = await User.findByIdAndDelete(req.params.id);
     console.log("User has been deleted");
+
+    res.status(200).json({
+        success: true,
+        message: "User Deleted"
+    }); 
 }
 
 const updateUser = async (req,res)=>{
